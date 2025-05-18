@@ -204,10 +204,10 @@ header {
 /* Cards hover (you already had this) */
 .service-card {
   transition: transform 0.3s, box-shadow 0.3s;
-  border: 1px solid rgba(0,0,0,0.05);
+  border: 1px solid #00000013;
   border-radius: 10px;
   padding: 15px;
-  background: #ffffff;
+  background: #e3f53f1f;
 }
 
 .service-card:hover {
