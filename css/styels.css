@@ -65,6 +65,19 @@ header {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+/* live time */
+#live-time {
+  position: fixed;
+  top: 70px; /* adjust based on your header height */
+  right: 20px;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  z-index: 1050;
+}
+
 
 /* HERO SECTION */
 

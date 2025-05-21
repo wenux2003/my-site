@@ -31,6 +31,17 @@ function type() {
 }
 type();
 
+//live time
+function updateTime() {
+  const timeBox = document.getElementById("live-time");
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString();
+  timeBox.textContent = timeStr;
+}
+setInterval(updateTime, 1000);
+updateTime(); // initial call
+
+
 // Video slider logic
 const slides = document.querySelectorAll('.video-slide');
 let slideIndex = 0;
