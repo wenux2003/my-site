@@ -1,158 +1,22 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Web-Max Services</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/styels.css">
-
-  <!-- ✅ Lottie Player -->
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
-
-</head>
-<body>
-
-  <!-- Header -->
-  <header>
-<nav class="navbar navbar-expand-md px-4">
-  <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-  <lottie-player
-    src="animations/robo.json"
-    background="transparent"
-    speed="1"
-    loop
-    autoplay
-    class="nav-lottie">
-  </lottie-player>
-</a>
-
-      <a class="navbar-brand" href="#">Web-Max</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#work">Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-            <div id="live-time"></div>
- 
-  <!-- Hero Section -->
-<section class="hero" id="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="videos/bgv.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <div class="hero-content">
-  <h1>Hi, I'm <span class="text-info">Web-Max</span></h1>
-  <p class="typed-text"></p>
-
-  <!-- ✨ Scrolling line inside hero -->
-  <div class="scrolling-text">
-    <span>🔔 I'm available for freelance UI/UX and Web Development Projects — Let's work together! 🔔</span>
-  </div>
-</div>
-
-
-  <!-- ✅ Fade-to-white overlay -->
-  <div class="hero-fade-bottom"></div>
-</section>
-
-  <!-- Services Section -->
-  <section class="container my-5" id="services">
-     <h2 class="text-center mb-4" data-aos="fade-up">Services I Offer</h2>
-  <div class="row g-4">
-    <div class="row g-4">
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card service-card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Static Websites</h5>
-            <p class="card-text">Clean HTML/CSS/JS websites for your projects or portfolio.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card service-card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">Bootstrap Designs</h5>
-            <p class="card-text">Responsive and modern sites with Bootstrap framework.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-        <div class="card service-card shadow-sm">
-          <div class="card-body">
-            <h5 class="card-title">PHP Websites</h5>
-            <p class="card-text">Dynamic PHP websites with backend contact forms.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Video Slider Section -->
-  <section class="container my-5" id="work">
-    <h2 class="text-center mb-4" data-aos="zoom-in">My Work Samples</h2>
-    <div class="video-slider" id="videoSlider" data-aos="fade-up">
-      <div class="video-slide active">
-        <video autoplay muted loop playsinline>
-          <source src="videos/v (2).mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-      <div class="video-slide">
-        <video autoplay muted loop playsinline>
-          <source src="videos/v (1).mp4" type="video/mp4" />
-        </video>
-      </div>
-      <div class="video-slide">
-        <video autoplay muted loop playsinline>
-          <source src="videos/v (5).mp4" type="video/mp4" />
-        </video>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="container my-5" id="contact">
-    <h2 class="text-center mb-4" data-aos="fade-up">Contact Me</h2>
-    <p class="text-center" data-aos="fade-up" data-aos-delay="100">
-      Email: <a href="mailto:wenurarcc@gmail.com">wenurarcc@gmail.com</a> | Phone: 076-3937006
-    </p>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center">
-    <p>&copy; 2025 Web-Max Services | Built with 💻</p>
-  </footer>
-
-  <!-- ✅ Back to Top Button with Lottie -->
-<button id="scrollToTopBtn" class="invisible-btn">
-  <lottie-player
-    src="animations/girl.json"
-    background="transparent"
-    speed="1"
-    loop
-    autoplay>
-  </lottie-player>
-</button>
-
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="js/script.js" defer></script>
-
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Professional portfolio for Web-Max, a frontend developer and designer building modern web experiences."
+    />
+    <title>Web-Max Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="/src/main.jsx"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
