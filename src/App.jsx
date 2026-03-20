@@ -69,7 +69,7 @@ function App() {
       <main>
         <section className="hero" id="home">
           <div className="hero-copy">
-            <p className="eyebrow">Frontend Developer • UI-Focused Builder</p>
+            <p className="eyebrow">Frontend Developer / UI-Focused Builder</p>
             <h1>Professional websites that look sharp, modern, and ready for real clients.</h1>
             <p className="hero-text">
               I design and build polished portfolio and business websites with a clean visual
@@ -156,7 +156,7 @@ function App() {
           <div className="contact-card">
             <a href="mailto:wenurarcc@gmail.com">wenurarcc@gmail.com</a>
             <a href="tel:+94763937006">076-3937006</a>
-            <p>Sri Lanka • Remote friendly</p>
+            <p>Sri Lanka / Remote friendly</p>
           </div>
         </section>
       </main>
