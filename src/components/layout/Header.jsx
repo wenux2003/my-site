@@ -3,7 +3,7 @@ import PillNav from "../effects/PillNav";
 const navItems = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
+  { label: "Stack", href: "#stack" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];

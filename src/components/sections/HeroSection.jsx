@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+import { aboutContent } from "../../data/siteContent";
 import DecryptedText from "../effects/DecryptedText";
 import RotatingText from "../effects/RotatingText";
 
@@ -7,10 +8,10 @@ const InteractiveHeroModel = lazy(() => import("../three/InteractiveHeroModel"))
 
 function HeroSection() {
   const tickerItems = [
-    "Frontend craft with premium polish",
-    "Interactive visuals that feel modern",
-    "Responsive portfolio experiences",
-    "Clean storytelling for stronger first impressions",
+    "Software engineering undergraduate at SLIIT",
+    "Full-stack web development with React and Node.js",
+    "Kotlin and Android development experience",
+    "Responsive interfaces with clean code focus",
   ];
 
   return (
@@ -27,7 +28,7 @@ function HeroSection() {
         <div className="pt-2 lg:pt-6">
           <div className="inline-flex items-center gap-2 rounded-full bg-white/8 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.26em] text-amber-100 backdrop-blur-sm">
             <span className="h-2 w-2 rounded-full bg-cyan-300" />
-            Featured Intro Section
+            {aboutContent.role}
           </div>
 
           <div className="mt-5">
@@ -36,16 +37,16 @@ function HeroSection() {
               encryptedClassName="font-display text-[0.7rem] uppercase tracking-[0.28em] text-slate-500"
               maxIterations={10}
               speed={32}
-              text="Modern interface systems / animated presentation / premium web feel"
+              text="JavaScript / React / Node.js / Kotlin / responsive application development"
             />
           </div>
 
           <h1 className="mt-6 max-w-5xl font-display text-[3.1rem] font-semibold leading-[0.9] tracking-[-0.075em] text-white sm:text-[4.5rem] lg:text-[5.4rem]">
-            Build a sharper
+            Wenura Kavinda
             <br />
-            digital presence with{" "}
+            builds{" "}
             <span className="bg-gradient-to-r from-amber-100 via-amber-300 to-orange-400 bg-clip-text text-transparent">
-              clean visual storytelling
+              full-stack digital experiences
             </span>
             .
           </h1>
@@ -61,18 +62,17 @@ function HeroSection() {
               staggerDuration={0.02}
               staggerFrom="last"
               texts={[
-                "Type-led storytelling",
-                "Refined section hierarchy",
-                "Interactive premium visuals",
+                "React and Node.js development",
+                "Responsive user-centric applications",
+                "Kotlin mobile app building",
               ]}
             />
           </div>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-            Professional hero sections should feel immediate, confident, and
-            visually memorable. This version combines bold type, layered motion,
-            and an interactive 3D visual while still keeping the presentation
-            clean and modern.
+            Dedicated Software Engineering student at SLIIT with a strong focus
+            on full-stack web development, responsive application design, and
+            practical implementation across web and mobile environments.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">

@@ -5,6 +5,7 @@ import HeroSection from "./components/sections/HeroSection";
 import ProcessSection from "./components/sections/ProcessSection";
 import ProjectsSection from "./components/sections/ProjectsSection";
 import ServicesSection from "./components/sections/ServicesSection";
+import TechStackSection from "./components/sections/TechStackSection";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <HeroSection />
           <AboutSection />
           <ServicesSection />
+          <TechStackSection />
           <ProjectsSection />
           <ProcessSection />
           <ContactSection />

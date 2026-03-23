@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { aboutContent } from "../../data/siteContent";
 import ScrollFloat from "../effects/ScrollFloat";
 
 function AboutSection() {
@@ -30,7 +31,7 @@ function AboutSection() {
         </div>
 
         <div className="surface-panel rounded-[2rem] p-7 sm:p-8">
-          <p className="section-kicker">About Wenura Kavida</p>
+          <p className="section-kicker">{`About ${aboutContent.name}`}</p>
           <ScrollFloat
             animationDuration={1}
             containerClassName="mt-4"
@@ -39,27 +40,13 @@ function AboutSection() {
             stagger={0.025}
             textClassName="font-display text-3xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl"
           >
-            A frontend builder shaping a stronger digital identity through Wenux.
+            {`${aboutContent.role} focused on full-stack web development.`}
           </ScrollFloat>
 
           <div className="mt-6 space-y-5 text-sm leading-8 text-slate-300 sm:text-base">
-            <p>
-              My name is <span className="font-semibold text-white">Wenura Kavida</span>.
-              I am building my portfolio under the name{" "}
-              <span className="font-semibold text-amber-200">Wenux</span>, with a
-              focus on professional-looking websites that feel modern, thoughtful,
-              and visually strong from the first second.
-            </p>
-            <p>
-              I enjoy taking simple ideas and turning them into polished frontend
-              experiences with better typography, cleaner spacing, better section
-              flow, and more confidence in the final presentation.
-            </p>
-            <p>
-              This site is being shaped as both an introduction and a proof of my
-              design direction: clean architecture, reusable components, and an
-              interface that feels more premium than a basic template.
-            </p>
+            {aboutContent.summary.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
           </div>
         </div>
       </div>

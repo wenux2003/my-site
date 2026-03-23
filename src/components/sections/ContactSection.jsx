@@ -1,4 +1,4 @@
-import { contactDetails } from "../../data/siteContent";
+import { aboutContent, contactDetails } from "../../data/siteContent";
 import SectionHeading from "../ui/SectionHeading";
 
 function ContactSection() {
@@ -8,8 +8,8 @@ function ContactSection() {
         <div>
           <SectionHeading
             eyebrow="Contact"
-            title="Ready for a portfolio or business site that looks more serious?"
-            description="If you want a sharper online presence and a more professional first impression, I am available for freelance frontend work."
+            title={`Get in touch with ${aboutContent.name}`}
+            description="Open to opportunities, collaborations, and project discussions related to software engineering, full-stack development, and product-building work."
           />
         </div>
 

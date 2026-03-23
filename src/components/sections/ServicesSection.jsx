@@ -1,17 +1,17 @@
-import { services } from "../../data/siteContent";
+import { focusAreas } from "../../data/siteContent";
 import SectionHeading from "../ui/SectionHeading";
 
 function ServicesSection() {
   return (
     <section className="py-10" id="services">
       <SectionHeading
-        eyebrow="Services"
-        title="What I can build for you"
-        description="A focused service lineup for clients who need a stronger, more professional web presence."
+        eyebrow="Focus Areas"
+        title="Core areas I work in"
+        description="These focus areas come directly from the profile and project direction in your CV."
       />
 
       <div className="mt-8 grid gap-5 lg:grid-cols-3">
-        {services.map((service) => (
+        {focusAreas.map((service) => (
           <article
             key={service.title}
             className="surface-panel rounded-[1.75rem] p-6 transition duration-200 hover:-translate-y-1 hover:border-amber-200/25"

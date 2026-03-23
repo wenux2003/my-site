@@ -1,61 +1,165 @@
-export const heroStats = [
-  { value: "Wenux", label: "Personal brand for premium frontend presentation" },
-  { value: "React", label: "Modern component-based frontend architecture" },
-  { value: "Tailwind", label: "Scalable styling system for cleaner UI development" },
+export const aboutContent = {
+  name: "Wenura Kavinda",
+  role: "Software Engineer Undergraduate",
+  overview:
+    "Dedicated Software Engineering student at SLIIT with a primary focus on full-stack web development and building responsive, user-centric applications.",
+  summary: [
+    "I am a Software Engineering undergraduate at SLIIT with a strong interest in full-stack development, responsive application design, and writing cleaner code across both frontend and backend systems.",
+    "My strongest stack includes JavaScript, React, Node.js, and practical web architecture, with additional hands-on experience in Kotlin-based Android development and logic-driven implementation work.",
+    "This portfolio is being shaped directly around my real CV so it presents my academic background, technical stack, and project experience in a clearer and more modern way.",
+  ],
+};
+
+export const focusAreas = [
+  {
+    tag: "Web",
+    title: "Full-Stack Web Development",
+    description:
+      "Building responsive and user-centric web applications with React, Node.js, Express, MongoDB, and practical frontend-backend architecture.",
+  },
+  {
+    tag: "Mobile",
+    title: "Android App Development",
+    description:
+      "Creating Kotlin-based mobile experiences with Android Studio, widgets, habit flows, reminders, and more structured user journeys.",
+  },
+  {
+    tag: "Logic",
+    title: "Problem Solving and Clean Code",
+    description:
+      "Focused on efficient implementation, cleaner code structure, and solving logic-heavy development problems with clarity and discipline.",
+  },
 ];
 
-export const services = [
+export const techStackGroups = [
   {
-    tag: "Build",
-    title: "Frontend Development",
-    description:
-      "Responsive websites built with clean structure, modern styling, and components that are easier to maintain as the project grows.",
+    title: "Programming",
+    accent: "from-cyan-300/30 via-cyan-200/10 to-transparent",
+    items: [
+      "JavaScript (ES6+)",
+      "Java",
+      "Python",
+      "PHP",
+      "C/C++",
+      "Kotlin",
+      "SQL",
+      "HTML5",
+      "CSS3",
+    ],
   },
   {
-    tag: "Brand",
-    title: "Portfolio and Business Sites",
-    description:
-      "Professional pages that present your services clearly, improve first impressions, and help your work feel more trustworthy.",
+    title: "Web Frameworks",
+    accent: "from-amber-300/30 via-amber-200/10 to-transparent",
+    items: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MERN Stack",
+      "Bootstrap",
+      "Tailwind CSS",
+    ],
   },
   {
-    tag: "Refresh",
-    title: "UI Redesign",
-    description:
-      "A visual reset for outdated websites, replacing weak layouts with stronger hierarchy, spacing, and more current design choices.",
+    title: "Tools and Platforms",
+    accent: "from-violet-300/30 via-violet-200/10 to-transparent",
+    items: [
+      "Git",
+      "GitHub",
+      "Android Studio",
+      "Figma",
+      "VS Code",
+      "MySQL",
+      "XAMPP",
+      "MongoDB",
+    ],
   },
 ];
 
 export const projects = [
   {
-    name: "LaunchPad Studio",
-    type: "Agency Website",
+    name: "CricketXpert",
+    type: "Full-Stack E-commerce and Booking Platform",
+    period: "2025 Jul - Nov",
+    technologies: ["MongoDB", "Express.js", "React", "Node.js", "JWT", "Bcrypt"],
     summary:
-      "A bold service-led landing page with premium typography, high-contrast layout blocks, and a clear conversion path.",
+      "A MERN-based platform combining e-commerce, booking, inventory handling, reporting, and role-based management in one operational system.",
+    highlights: [
+      "Engineered secure JWT and Bcrypt authentication with OTP recovery and duplicate-prevention validation.",
+      "Implemented RBAC for Admin, Staff, and Customer roles with account management and suspension tools.",
+      "Automated salary calculation, PDF invoicing, supplier tracking, and inventory reporting workflows.",
+    ],
   },
   {
-    name: "Nova Fitness",
-    type: "Coach Portfolio",
+    name: "Align Me",
+    type: "Student Productivity Application",
+    period: "2025 Sep - Nov",
+    technologies: ["Kotlin", "Android Studio", "Figma", "Android Widgets"],
     summary:
-      "A sharp brand showcase designed for personal credibility, featuring offer framing, testimonials, and polished CTA placement.",
+      "A Kotlin-based student productivity app built around habit tracking, reminders, mood logging, and study consistency.",
+    highlights: [
+      "Built a habit tracker with notification-based study reminders.",
+      "Created a mood tracker and habit analytics dashboard with a custom widget experience.",
+      "Designed a high-fidelity mobile UI in Figma to improve usability and flow.",
+    ],
   },
   {
-    name: "Crafted Spaces",
-    type: "Interior Design Portfolio",
+    name: "Pharmacy E-commerce System",
+    type: "Java-Based E-commerce Application",
+    period: "2025 Feb - Apr",
+    technologies: ["Java", "MySQL", "PHPMyAdmin", "HTML", "JavaScript", "Bootstrap"],
     summary:
-      "A visual-first project presentation with refined card layout, airy spacing, and a stronger editorial feel.",
+      "A pharmacy-focused e-commerce system with inventory logic, feedback workflows, and admin-side management functionality.",
+    highlights: [
+      "Built the core e-commerce and inventory logic using Java and MySQL.",
+      "Developed a customer-admin feedback module for review submission and response handling.",
+      "Added admin-side search and filtering for better feedback management.",
+    ],
+  },
+  {
+    name: "Student Help Desk",
+    type: "Web-Based Support System",
+    period: "2024 Aug - Oct",
+    technologies: ["PHP", "MySQL", "JavaScript", "HTML/CSS", "XAMPP"],
+    summary:
+      "A web-based help desk platform built for student support, ticketing, and lecture material management.",
+    highlights: [
+      "Developed secure support and material portals for academic use.",
+      "Engineered registration, login, profile editing, and core user-management functionality.",
+      "Focused on a structured, practical system for student issue tracking and support delivery.",
+    ],
   },
 ];
 
-export const processSteps = [
-  "Understand the audience, purpose, and visual direction before writing the UI.",
-  "Split the project into reusable sections and components with clearer ownership.",
-  "Build the frontend with responsive structure and maintainable styling patterns.",
-  "Review and refine the experience so the final result feels polished and ready to host.",
+export const educationCards = [
+  {
+    title: "Education",
+    detail: "BSc (Hons) Information Technology",
+    subDetail: "Software Engineering / 3rd Year",
+    meta: "SLIIT, Malabe / Jul 2023 - Present",
+  },
+  {
+    title: "Certificate",
+    detail: "Python for Beginners",
+    subDetail: "University of Moratuwa",
+    meta: "Credential ID: 55NZSrmW41",
+  },
+  {
+    title: "Certificate",
+    detail: "AI/ML Engineer - Stage 1",
+    subDetail: "CODE at SLIIT",
+    meta: "Certificate ID: sevljoe0kv",
+  },
+  {
+    title: "Languages",
+    detail: "English / Sinhala",
+    subDetail: "Professional Working / Native",
+    meta: "Communication for academic and local environments",
+  },
 ];
 
 export const contactDetails = {
-  email: "wenurarcc@gmail.com",
+  email: "wenurakavinda23@gmail.com",
   phoneHref: "+94763937006",
-  phoneLabel: "076-3937006",
-  location: "Sri Lanka / Remote Friendly",
+  phoneLabel: "+94 76 393 7006",
+  location: "Athuruguriya, Western Province",
 };

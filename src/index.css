@@ -56,3 +56,32 @@
 .hero-marquee {
   animation: hero-marquee 28s linear infinite;
 }
+
+.stack-carousel-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+@keyframes stack-marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.stack-carousel-track {
+  display: flex;
+  width: max-content;
+  animation: stack-marquee 26s linear infinite;
+}
+
+.stack-carousel-track-reverse {
+  animation-direction: reverse;
+}
+
+.stack-carousel-mask:hover .stack-carousel-track {
+  animation-play-state: paused;
+}
