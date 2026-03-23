@@ -6,6 +6,13 @@ const LiquidEther = lazy(() => import("../background/LiquidEther"));
 const InteractiveHeroModel = lazy(() => import("../three/InteractiveHeroModel"));
 
 function HeroSection() {
+  const tickerItems = [
+    "Frontend craft with premium polish",
+    "Interactive visuals that feel modern",
+    "Responsive portfolio experiences",
+    "Clean storytelling for stronger first impressions",
+  ];
+
   return (
     <section
       className="relative overflow-hidden px-0 py-4 sm:py-6 lg:py-8"
@@ -16,12 +23,14 @@ function HeroSection() {
       </Suspense>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(124,58,237,0.12),transparent_24%),linear-gradient(110deg,rgba(8,17,29,0.18),rgba(8,17,29,0.78)_52%,rgba(8,17,29,0.95))]" />
 
-      <div className="relative grid min-h-[88vh] gap-10 px-5 sm:px-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,420px)] lg:items-center lg:px-12 xl:px-16">
+      <div className="relative grid min-h-[84vh] gap-10 px-5 pt-10 sm:px-8 lg:grid-cols-[minmax(0,1.08fr)_minmax(320px,420px)] lg:items-center lg:px-12 xl:px-16">
         <div className="pt-2 lg:pt-6">
-          <p className="text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-cyan-200/90">
-            Creative Frontend Direction
-          </p>
-          <div className="mt-4">
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/8 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.26em] text-amber-100 backdrop-blur-sm">
+            <span className="h-2 w-2 rounded-full bg-cyan-300" />
+            Featured Intro Section
+          </div>
+
+          <div className="mt-5">
             <DecryptedText
               className="font-display text-[0.7rem] uppercase tracking-[0.28em] text-slate-300"
               encryptedClassName="font-display text-[0.7rem] uppercase tracking-[0.28em] text-slate-500"
@@ -31,8 +40,10 @@ function HeroSection() {
             />
           </div>
 
-          <h1 className="mt-6 max-w-5xl font-display text-[3.25rem] font-semibold leading-[0.92] tracking-[-0.07em] text-white sm:text-[4.4rem] lg:text-[5.1rem]">
-            Build a sharper digital presence with{" "}
+          <h1 className="mt-6 max-w-5xl font-display text-[3.1rem] font-semibold leading-[0.9] tracking-[-0.075em] text-white sm:text-[4.5rem] lg:text-[5.4rem]">
+            Build a sharper
+            <br />
+            digital presence with{" "}
             <span className="bg-gradient-to-r from-amber-100 via-amber-300 to-orange-400 bg-clip-text text-transparent">
               clean visual storytelling
             </span>
@@ -57,37 +68,25 @@ function HeroSection() {
             />
           </div>
 
-          <p className="mt-6 max-w-xl text-sm leading-7 text-slate-300 sm:text-base">
-            Professional intro sections should feel immediate, polished, and
-            memorable. This layout is designed to combine strong typography,
-            layered animation, and a responsive 3D visual without looking like
-            a generic template.
+          <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            Professional hero sections should feel immediate, confident, and
+            visually memorable. This version combines bold type, layered motion,
+            and an interactive 3D visual while still keeping the presentation
+            clean and modern.
           </p>
-
-          <div className="mt-8 flex flex-wrap gap-3 text-[0.7rem] font-medium uppercase tracking-[0.24em] text-slate-300">
-            <span className="rounded-full bg-white/[0.045] px-4 py-2">
-              Decrypted text
-            </span>
-            <span className="rounded-full bg-white/[0.045] px-4 py-2">
-              Gradient headline
-            </span>
-            <span className="rounded-full bg-white/[0.045] px-4 py-2">
-              Mouse-reactive 3D
-            </span>
-          </div>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
             <a
-              className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-amber-200 to-orange-400 px-6 font-semibold text-slate-950 transition hover:-translate-y-0.5"
+              className="inline-flex min-h-14 items-center justify-center rounded-full bg-gradient-to-r from-amber-200 to-orange-400 px-7 font-semibold text-slate-950 transition hover:-translate-y-0.5"
               href="#about"
             >
-              Continue to About
+              Explore My Work
             </a>
             <a
-              className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 font-semibold text-white transition hover:-translate-y-0.5 hover:border-amber-200/40 hover:text-amber-100"
+              className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 font-semibold text-white transition hover:-translate-y-0.5 hover:border-amber-200/40 hover:text-amber-100"
               href="#projects"
             >
-              See More Sections
+              View Projects
             </a>
           </div>
         </div>
@@ -102,6 +101,17 @@ function HeroSection() {
               Floating computer object
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="relative mt-4 overflow-hidden border-y border-white/8 bg-[#111d2d]/80 py-4 backdrop-blur-sm">
+        <div className="hero-marquee flex w-max items-center gap-14 whitespace-nowrap text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slate-100 sm:text-sm">
+          {[...tickerItems, ...tickerItems].map((item, index) => (
+            <span className="flex items-center gap-3" key={`${item}-${index}`}>
+              <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
+              {item}
+            </span>
+          ))}
         </div>
       </div>
     </section>
