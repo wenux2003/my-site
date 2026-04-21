@@ -10,7 +10,7 @@ const navItems = [
 
 function Header() {
   return (
-    <header className="fixed inset-x-0 top-4 z-50">
+    <header className="relative z-50">
       <div className="mx-auto flex w-full justify-center px-4 sm:px-6 lg:px-8">
         <PillNav
           activeHref="#home"

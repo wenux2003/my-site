@@ -1,5 +1,6 @@
 import { lazy, Suspense } from "react";
 import { aboutContent } from "../../data/siteContent";
+import Header from "../layout/Header";
 import DecryptedText from "../effects/DecryptedText";
 import RotatingText from "../effects/RotatingText";
 
@@ -16,7 +17,7 @@ function HeroSection() {
 
   return (
     <section
-      className="relative overflow-hidden py-4 sm:py-6 lg:py-8"
+      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden pb-4 sm:pb-6 lg:pb-8"
       id="home"
     >
       <div className="relative overflow-hidden">
@@ -25,8 +26,12 @@ function HeroSection() {
         </Suspense>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(124,58,237,0.12),transparent_24%),linear-gradient(110deg,rgba(8,17,29,0.42),rgba(8,17,29,0.82)_52%,rgba(8,17,29,0.96))]" />
 
-        <div className="relative grid gap-8 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,1.08fr)_minmax(300px,390px)] lg:items-center lg:px-10 xl:px-12">
-          <div>
+        <div className="relative pt-4">
+          <Header />
+        </div>
+
+        <div className="relative mx-auto grid max-w-[1320px] gap-8 px-5 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-18 lg:grid-cols-[minmax(0,760px)_minmax(300px,390px)] lg:items-center lg:justify-center lg:gap-24 lg:px-10 lg:pt-20 xl:gap-36 xl:px-12">
+          <div className="max-w-[760px]">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/8 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.26em] text-amber-100 backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-cyan-300" />
               {aboutContent.role}
@@ -42,7 +47,7 @@ function HeroSection() {
               />
             </div>
 
-            <h1 className="mt-6 max-w-4xl font-display text-[3rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-[4.4rem] lg:text-[5rem]">
+            <h1 className="mt-6 max-w-[760px] font-display text-[3rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-[4.4rem] lg:text-[5rem]">
               Wenura Kavinda
               <br />
               builds{" "}
