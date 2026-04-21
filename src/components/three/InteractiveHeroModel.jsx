@@ -43,9 +43,9 @@ function InteractiveHeroModel() {
       clearcoatRoughness: 0.04,
     });
     const bodyMaterial = new THREE.MeshPhysicalMaterial({
-      color: "#111827",
-      roughness: 0.22,
-      metalness: 0.8,
+      color: "#f8fafc",
+      roughness: 0.18,
+      metalness: 0.24,
       clearcoat: 0.8,
       clearcoatRoughness: 0.08,
     });
@@ -97,16 +97,18 @@ function InteractiveHeroModel() {
 
     const makeLimb = (side) => {
       const limb = new THREE.Group();
-      limb.position.x = side;
 
-      const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.12, 0.82, 20), jointMaterial);
-      arm.position.set(side * 0.38, -0.23, 0);
-      arm.rotation.z = side * -0.38;
+      const shoulder = new THREE.Mesh(new THREE.SphereGeometry(0.13, 24, 16), bodyMaterial);
+      shoulder.position.set(side * 0.66, -0.02, 0.08);
+
+      const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.085, 0.11, 0.72, 20), jointMaterial);
+      arm.position.set(side * 0.8, -0.33, 0.04);
+      arm.rotation.z = side * -0.34;
 
       const hand = new THREE.Mesh(new THREE.SphereGeometry(0.15, 24, 16), shellMaterial);
-      hand.position.set(side * 0.56, -0.7, 0.02);
+      hand.position.set(side * 0.96, -0.68, 0.06);
 
-      limb.add(arm, hand);
+      limb.add(shoulder, arm, hand);
       return limb;
     };
 

@@ -30,7 +30,7 @@ function HeroSection() {
           <Header />
         </div>
 
-        <div className="relative mx-auto grid max-w-[1320px] gap-8 px-5 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-18 lg:grid-cols-[minmax(0,760px)_minmax(300px,390px)] lg:items-center lg:justify-center lg:gap-24 lg:px-10 lg:pt-20 xl:gap-36 xl:px-12">
+        <div className="relative mx-auto grid max-w-[1440px] gap-8 px-5 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-18 lg:grid-cols-[minmax(0,760px)_minmax(390px,1fr)] lg:items-center lg:gap-32 lg:px-12 lg:pt-20 xl:gap-44 xl:px-16">
           <div className="max-w-[760px]">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/8 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.26em] text-amber-100 backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-cyan-300" />
@@ -97,7 +97,7 @@ function HeroSection() {
             </div>
           </div>
 
-          <div className="relative flex min-h-[330px] items-center justify-center lg:min-h-[430px]">
+          <div className="relative flex min-h-[330px] items-center justify-center lg:min-h-[430px] lg:justify-end">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.22),transparent_36%)] blur-3xl" />
             <div className="relative h-full min-h-[320px] w-full">
               <Suspense fallback={<div className="h-full min-h-[320px] w-full" />}>
