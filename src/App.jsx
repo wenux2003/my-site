@@ -1,5 +1,6 @@
 import AboutSection from "./components/sections/AboutSection";
 import ContactSection from "./components/sections/ContactSection";
+import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/HeroSection";
 import ProcessSection from "./components/sections/ProcessSection";
 import ProjectsSection from "./components/sections/ProjectsSection";
@@ -13,6 +14,7 @@ function App() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),transparent)]" />
 
       <div className="relative mx-auto flex min-h-screen w-full max-w-[1440px] flex-col px-4 pb-16 sm:px-6 lg:px-8 xl:px-10">
+        <Header />
         <main className="flex-1">
           <HeroSection />
           <AboutSection />

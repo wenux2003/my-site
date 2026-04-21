@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { aboutContent } from "../../data/siteContent";
-import ScrollFloat from "../effects/ScrollFloat";
 
 function AboutSection() {
   const [imageError, setImageError] = useState(false);
@@ -32,16 +31,9 @@ function AboutSection() {
 
         <div className="surface-panel rounded-[2rem] p-7 sm:p-8">
           <p className="section-kicker">{`About ${aboutContent.name}`}</p>
-          <ScrollFloat
-            animationDuration={1}
-            containerClassName="mt-4"
-            scrollEnd="bottom bottom-=32%"
-            scrollStart="top bottom-=10%"
-            stagger={0.025}
-            textClassName="font-display text-3xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl"
-          >
+          <h2 className="mt-4 font-display text-3xl font-semibold tracking-[-0.04em] text-white sm:text-5xl lg:text-6xl">
             {`${aboutContent.role} focused on full-stack web development.`}
-          </ScrollFloat>
+          </h2>
 
           <div className="mt-6 space-y-5 text-sm leading-8 text-slate-300 sm:text-base">
             {aboutContent.summary.map((paragraph) => (

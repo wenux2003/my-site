@@ -1,36 +1,24 @@
 import { lazy, Suspense } from "react";
 import { aboutContent } from "../../data/siteContent";
-import Header from "../layout/Header";
 import DecryptedText from "../effects/DecryptedText";
-import RotatingText from "../effects/RotatingText";
+import HeroScrollArrow from "../effects/HeroScrollArrow";
 
 const LiquidEther = lazy(() => import("../background/LiquidEther"));
 const InteractiveHeroModel = lazy(() => import("../three/InteractiveHeroModel"));
 
 function HeroSection() {
-  const tickerItems = [
-    "Software engineering undergraduate at SLIIT",
-    "Full-stack web development with React and Node.js",
-    "Kotlin and Android development experience",
-    "Responsive interfaces with clean code focus",
-  ];
-
   return (
     <section
-      className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden pb-4 sm:pb-6 lg:pb-8"
+      className="relative left-1/2 min-h-screen w-screen -translate-x-1/2 overflow-hidden"
       id="home"
     >
-      <div className="relative overflow-hidden">
+      <div className="relative min-h-screen overflow-hidden">
         <Suspense fallback={<div className="pointer-events-none absolute inset-0 opacity-50" />}>
           <LiquidEther className="pointer-events-none absolute inset-0 opacity-70" />
         </Suspense>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(124,58,237,0.12),transparent_24%),linear-gradient(110deg,rgba(8,17,29,0.42),rgba(8,17,29,0.82)_52%,rgba(8,17,29,0.96))]" />
 
-        <div className="relative pt-4">
-          <Header />
-        </div>
-
-        <div className="relative mx-auto grid max-w-[1440px] gap-8 px-5 pb-10 pt-16 sm:px-8 sm:pb-12 sm:pt-18 lg:grid-cols-[minmax(0,760px)_minmax(390px,1fr)] lg:items-center lg:gap-32 lg:px-12 lg:pt-20 xl:gap-44 xl:px-16">
+        <div className="relative mx-auto grid min-h-screen max-w-[1440px] gap-8 px-5 pb-24 pt-28 sm:px-8 sm:pb-28 sm:pt-32 lg:grid-cols-[minmax(0,760px)_minmax(390px,1fr)] lg:items-center lg:gap-32 lg:px-12 lg:pt-34 xl:gap-44 xl:px-16">
           <div className="max-w-[760px]">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/8 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.26em] text-amber-100 backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-cyan-300" />
@@ -57,22 +45,8 @@ function HeroSection() {
               .
             </h1>
 
-            <div className="mt-5 flex min-h-[3rem] items-center text-base font-semibold text-slate-100 sm:min-h-[3.4rem] sm:text-xl">
-              <RotatingText
-                animate={{ y: 0, opacity: 1 }}
-                elementLevelClassName="text-cyan-200"
-                exit={{ y: "-120%", opacity: 0 }}
-                initial={{ y: "100%", opacity: 0 }}
-                mainClassName="inline-flex min-h-[1.15em] align-middle"
-                rotationInterval={2400}
-                staggerDuration={0.02}
-                staggerFrom="last"
-                texts={[
-                  "React and Node.js development",
-                  "Responsive user-centric applications",
-                  "Kotlin mobile app building",
-                ]}
-              />
+            <div className="mt-5 flex min-h-[3rem] items-center text-base font-semibold text-cyan-200 sm:min-h-[3.4rem] sm:text-xl">
+              Responsive user-centric applications
             </div>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
@@ -109,17 +83,7 @@ function HeroSection() {
             </div>
           </div>
         </div>
-
-        <div className="relative overflow-hidden border-y border-white/8 bg-[#111d2d]/45 py-4 backdrop-blur-sm">
-          <div className="hero-marquee flex w-max items-center gap-14 whitespace-nowrap text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-slate-100 sm:text-sm">
-            {[...tickerItems, ...tickerItems].map((item, index) => (
-              <span className="flex items-center gap-3" key={`${item}-${index}`}>
-                <span className="h-1.5 w-1.5 rounded-full bg-cyan-300" />
-                {item}
-              </span>
-            ))}
-          </div>
-        </div>
+        <HeroScrollArrow />
       </div>
     </section>
   );

@@ -157,10 +157,6 @@ function PillNav({
   return (
     <div className="pill-nav-container">
       <nav className={`pill-nav ${className}`.trim()} style={cssVars}>
-        <a className="pill-logo" href="#home" aria-label="Wenux home">
-          <span>WX</span>
-        </a>
-
         <div className="pill-nav-items desktop-only">
           <ul className="pill-list" role="menubar">
             {items.map((item, index) => (
