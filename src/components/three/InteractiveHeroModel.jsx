@@ -32,83 +32,132 @@ function InteractiveHeroModel() {
     pointLightB.position.set(-4, -3, 5);
     scene.add(ambientLight, pointLightA, pointLightB);
 
-    const laptopGroup = new THREE.Group();
-    sceneGroup.add(laptopGroup);
+    const robotGroup = new THREE.Group();
+    sceneGroup.add(robotGroup);
 
-    const base = new THREE.Mesh(
-      new THREE.BoxGeometry(2.9, 0.14, 2),
-      new THREE.MeshPhysicalMaterial({
-        color: "#b8c4d6",
-        roughness: 0.22,
-        metalness: 0.88,
-        clearcoat: 0.7,
-        clearcoatRoughness: 0.08,
-      }),
-    );
-    base.position.y = -0.65;
+    const shellMaterial = new THREE.MeshPhysicalMaterial({
+      color: "#05070b",
+      roughness: 0.16,
+      metalness: 0.55,
+      clearcoat: 1,
+      clearcoatRoughness: 0.04,
+    });
+    const bodyMaterial = new THREE.MeshPhysicalMaterial({
+      color: "#111827",
+      roughness: 0.22,
+      metalness: 0.8,
+      clearcoat: 0.8,
+      clearcoatRoughness: 0.08,
+    });
+    const jointMaterial = new THREE.MeshStandardMaterial({
+      color: "#020617",
+      roughness: 0.35,
+      metalness: 0.75,
+    });
+    const glowMaterial = new THREE.MeshStandardMaterial({
+      color: "#22d3ee",
+      emissive: "#22d3ee",
+      emissiveIntensity: 2.2,
+      roughness: 0.25,
+      metalness: 0.2,
+    });
 
-    const keyboard = new THREE.Mesh(
-      new THREE.BoxGeometry(2.15, 0.04, 1.38),
+    const head = new THREE.Mesh(new THREE.SphereGeometry(1.05, 64, 48), shellMaterial);
+    head.scale.set(1.08, 0.9, 0.9);
+    head.position.y = 1.25;
+
+    const faceGlow = new THREE.Mesh(
+      new THREE.TorusGeometry(0.72, 0.012, 16, 120),
       new THREE.MeshStandardMaterial({
-        color: "#243447",
-        roughness: 0.7,
-        metalness: 0.08,
+        color: "#38bdf8",
+        emissive: "#38bdf8",
+        emissiveIntensity: 0.55,
+        transparent: true,
+        opacity: 0.6,
       }),
     );
-    keyboard.position.set(0, -0.56, 0.05);
+    faceGlow.scale.set(1.14, 0.72, 1);
+    faceGlow.position.set(0, 1.25, 0.78);
 
-    const trackpad = new THREE.Mesh(
-      new THREE.BoxGeometry(0.58, 0.01, 0.38),
-      new THREE.MeshStandardMaterial({
-        color: "#9caec2",
-        roughness: 0.55,
-        metalness: 0.2,
-      }),
-    );
-    trackpad.position.set(0, -0.52, 0.58);
+    const eyeGeometry = new THREE.BoxGeometry(0.13, 0.42, 0.035);
+    const leftEye = new THREE.Mesh(eyeGeometry, glowMaterial);
+    leftEye.position.set(-0.34, 1.28, 0.88);
+    const rightEye = new THREE.Mesh(eyeGeometry, glowMaterial);
+    rightEye.position.set(0.34, 1.28, 0.88);
 
-    const lid = new THREE.Group();
-    lid.position.set(0, -0.52, -0.92);
-    lid.rotation.x = -1.16;
-    laptopGroup.add(lid);
+    const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.18, 0.22, 0.25, 24), jointMaterial);
+    neck.position.y = 0.35;
 
-    const lidShell = new THREE.Mesh(
-      new THREE.BoxGeometry(2.9, 1.82, 0.12),
-      new THREE.MeshPhysicalMaterial({
-        color: "#c2ccdc",
-        roughness: 0.2,
-        metalness: 0.84,
-        clearcoat: 0.8,
-        clearcoatRoughness: 0.08,
-      }),
-    );
+    const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.58, 0.72, 8, 32), bodyMaterial);
+    body.position.y = -0.28;
+    body.scale.set(1.08, 1, 0.72);
 
-    const screen = new THREE.Mesh(
-      new THREE.PlaneGeometry(2.52, 1.48),
-      new THREE.MeshStandardMaterial({
-        color: "#07111b",
-        emissive: "#4f46e5",
-        emissiveIntensity: 0.35,
-        roughness: 0.2,
-        metalness: 0.05,
-      }),
-    );
-    screen.position.z = 0.066;
+    const core = new THREE.Mesh(new THREE.TorusGeometry(0.38, 0.035, 16, 80), glowMaterial);
+    core.position.set(0, -0.18, 0.46);
 
-    const glowFrame = new THREE.Mesh(
-      new THREE.TorusGeometry(0.94, 0.03, 20, 90),
+    const makeLimb = (side) => {
+      const limb = new THREE.Group();
+      limb.position.x = side;
+
+      const arm = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.12, 0.82, 20), jointMaterial);
+      arm.position.set(side * 0.38, -0.23, 0);
+      arm.rotation.z = side * -0.38;
+
+      const hand = new THREE.Mesh(new THREE.SphereGeometry(0.15, 24, 16), shellMaterial);
+      hand.position.set(side * 0.56, -0.7, 0.02);
+
+      limb.add(arm, hand);
+      return limb;
+    };
+
+    const leftArm = makeLimb(-1);
+    const rightArm = makeLimb(1);
+
+    const makeLeg = (side) => {
+      const leg = new THREE.Group();
+      const upper = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.15, 0.58, 20), jointMaterial);
+      upper.position.set(side * 0.28, -0.92, 0);
+      upper.rotation.z = side * 0.12;
+
+      const foot = new THREE.Mesh(new THREE.SphereGeometry(0.2, 28, 18), shellMaterial);
+      foot.scale.set(1.35, 0.55, 1);
+      foot.position.set(side * 0.34, -1.28, 0.12);
+
+      leg.add(upper, foot);
+      return leg;
+    };
+
+    const leftLeg = makeLeg(-1);
+    const rightLeg = makeLeg(1);
+
+    const shadowRing = new THREE.Mesh(
+      new THREE.TorusGeometry(0.9, 0.018, 16, 120),
       new THREE.MeshStandardMaterial({
         color: "#22d3ee",
         emissive: "#22d3ee",
-        emissiveIntensity: 0.4,
-        roughness: 0.3,
-        metalness: 0.5,
+        emissiveIntensity: 0.5,
+        transparent: true,
+        opacity: 0.45,
       }),
     );
-    glowFrame.scale.set(1.16, 0.8, 1);
-    glowFrame.position.z = 0.07;
+    shadowRing.position.y = -1.55;
+    shadowRing.rotation.x = Math.PI / 2;
+    shadowRing.scale.set(1.2, 0.62, 1);
 
-    lid.add(lidShell, screen, glowFrame);
+    robotGroup.add(
+      head,
+      faceGlow,
+      leftEye,
+      rightEye,
+      neck,
+      body,
+      core,
+      leftArm,
+      rightArm,
+      leftLeg,
+      rightLeg,
+      shadowRing,
+    );
 
     const stars = new THREE.Points(
       new THREE.BufferGeometry(),
@@ -132,11 +181,10 @@ function InteractiveHeroModel() {
     }
     stars.geometry.setAttribute("position", new THREE.BufferAttribute(starPositions, 3));
 
-    laptopGroup.add(base, keyboard, trackpad);
     sceneGroup.add(stars);
-    laptopGroup.rotation.x = -0.22;
-    laptopGroup.rotation.y = -0.55;
-    laptopGroup.rotation.z = 0.06;
+    robotGroup.rotation.x = -0.08;
+    robotGroup.rotation.y = -0.42;
+    robotGroup.rotation.z = 0.04;
 
     const pointer = { x: 0, y: 0 };
     const targetRotation = { x: 0, y: 0 };
@@ -181,9 +229,14 @@ function InteractiveHeroModel() {
       sceneGroup.position.x += (pointer.x * 0.16 - sceneGroup.position.x) * 0.04;
       sceneGroup.position.y += (pointer.y * 0.14 - sceneGroup.position.y) * 0.04;
 
-      laptopGroup.position.y = Math.sin(elapsed * 1.2) * 0.12;
-      laptopGroup.rotation.z = 0.06 + Math.sin(elapsed * 0.9) * 0.03;
-      glowFrame.rotation.z = elapsed * 0.45;
+      robotGroup.position.y = Math.sin(elapsed * 1.2) * 0.14;
+      robotGroup.rotation.z = 0.04 + Math.sin(elapsed * 0.9) * 0.035;
+      leftArm.rotation.z = Math.sin(elapsed * 1.4) * 0.08;
+      rightArm.rotation.z = Math.sin(elapsed * 1.4 + Math.PI) * 0.08;
+      leftEye.scale.y = 0.82 + Math.sin(elapsed * 5.5) * 0.12;
+      rightEye.scale.y = 0.82 + Math.sin(elapsed * 5.5) * 0.12;
+      core.rotation.z = elapsed * 0.8;
+      shadowRing.rotation.z = elapsed * 0.35;
       stars.rotation.y = elapsed * 0.08;
       stars.rotation.x = Math.sin(elapsed * 0.2) * 0.1;
 
@@ -198,20 +251,21 @@ function InteractiveHeroModel() {
       window.removeEventListener("resize", resize);
       mount.removeEventListener("pointermove", handlePointerMove);
       mount.removeEventListener("pointerleave", handlePointerLeave);
-      base.geometry.dispose();
-      base.material.dispose();
-      keyboard.geometry.dispose();
-      keyboard.material.dispose();
-      trackpad.geometry.dispose();
-      trackpad.material.dispose();
-      lidShell.geometry.dispose();
-      lidShell.material.dispose();
-      screen.geometry.dispose();
-      screen.material.dispose();
-      glowFrame.geometry.dispose();
-      glowFrame.material.dispose();
       stars.geometry.dispose();
       stars.material.dispose();
+      scene.traverse((object) => {
+        if (!object.isMesh || object === stars) {
+          return;
+        }
+
+        object.geometry?.dispose();
+
+        if (Array.isArray(object.material)) {
+          object.material.forEach((material) => material.dispose());
+        } else {
+          object.material?.dispose();
+        }
+      });
       renderer.dispose();
 
       if (renderer.domElement.parentNode === mount) {

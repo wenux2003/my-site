@@ -9,11 +9,18 @@ function StackCarouselRow({ items, reverse = false }) {
       <div className={`stack-carousel-track ${reverse ? "stack-carousel-track-reverse" : ""}`}>
         {repeatedItems.map((item, index) => (
           <div
-            className="mx-3 inline-flex items-center rounded-full border border-white/8 bg-white/6 px-5 py-3 text-sm font-semibold text-slate-100 shadow-lg shadow-black/10 backdrop-blur-sm"
-            key={`${item}-${index}`}
+            className="mx-3 inline-flex min-w-max items-center gap-3 rounded-full border border-white/10 bg-white/7 px-4 py-3 text-sm font-semibold text-slate-100 shadow-lg shadow-black/10 backdrop-blur-sm transition duration-200 hover:-translate-y-0.5 hover:border-cyan-200/30 hover:bg-white/10"
+            key={`${item.name}-${index}`}
           >
-            <span className="mr-3 h-2 w-2 rounded-full bg-cyan-300" />
-            {item}
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/10">
+              <img
+                alt={`${item.name} logo`}
+                className="h-5 w-5 object-contain"
+                loading="lazy"
+                src={item.icon}
+              />
+            </span>
+            <span>{item.name}</span>
           </div>
         ))}
       </div>
@@ -30,13 +37,12 @@ function TechStackSection() {
         description="Inspired by modern component showcase sections, this layout presents your stack in three moving rows based on the exact categories from the CV."
       />
 
-      <div className="mt-8 space-y-6">
+      <div className="mt-8 space-y-10">
         {techStackGroups.map((group, index) => (
           <div
-            className="surface-panel overflow-hidden rounded-[1.9rem] p-5 sm:p-6"
+            className="overflow-hidden border-t border-white/10 pt-6"
             key={group.title}
           >
-            <div className={`mb-5 h-px w-full bg-gradient-to-r ${group.accent}`} />
             <div className="mb-4 flex items-center justify-between gap-4">
               <h3 className="font-display text-2xl font-semibold text-white">
                 {group.title}
