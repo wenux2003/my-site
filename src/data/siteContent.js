@@ -2,11 +2,11 @@ export const aboutContent = {
   name: "Wenura Kavinda",
   role: "Software Engineer Undergraduate",
   overview:
-    "Dedicated Software Engineering student at SLIIT with a primary focus on full-stack web development and building responsive, user-centric applications.",
+    "Full-stack developer specializing in the MERN stack and practical, high-performance web architecture while refining my craft at SLIIT.",
   summary: [
-    "I am a Software Engineering undergraduate at SLIIT with a strong interest in full-stack development, responsive application design, and writing cleaner code across both frontend and backend systems.",
-    "My strongest stack includes JavaScript, React, Node.js, and practical web architecture, with additional hands-on experience in Kotlin-based Android development and logic-driven implementation work.",
-    "This portfolio is being shaped directly around my real CV so it presents my academic background, technical stack, and project experience in a clearer and more modern way.",
+    "I am a Software Engineering student with a passion for clean code and solving real-world problems through web technology. I do not just build websites; I build tools that work clearly, reliably, and with purpose.",
+    "My primary expertise is in JavaScript, React, Node.js, Express, and MongoDB, but I am also comfortable diving into backend logic, database workflows, and Kotlin-based Android development when a product needs it.",
+    "Away from the editor, I like exploring new technology trends and sharpening ideas through gaming, anime, and hands-on experiments that keep my creative thinking active.",
   ],
 };
 
@@ -133,27 +133,27 @@ export const projects = [
 export const educationCards = [
   {
     title: "Education",
-    detail: "BSc (Hons) Information Technology",
-    subDetail: "Software Engineering / 3rd Year",
-    meta: "SLIIT, Malabe / Jul 2023 - Present",
+    detail: "BSc (Hons) in Software Engineering",
+    subDetail: "SLIIT",
+    description:
+      "Currently in my 3rd year, focusing on advanced software architecture, full-stack development, and data structures. Maintaining a strong academic record while actively participating in tech clubs.",
+    meta: "2021 - Present",
   },
   {
     title: "Certificate",
     detail: "Python for Beginners",
     subDetail: "University of Moratuwa",
+    description:
+      "Foundation-level certification covering Python programming fundamentals and practical problem solving.",
     meta: "Credential ID: 55NZSrmW41",
   },
   {
     title: "Certificate",
     detail: "AI/ML Engineer - Stage 1",
     subDetail: "CODE at SLIIT",
+    description:
+      "Introductory AI and machine learning credential focused on core concepts, workflows, and applied learning.",
     meta: "Certificate ID: sevljoe0kv",
-  },
-  {
-    title: "Languages",
-    detail: "English / Sinhala",
-    subDetail: "Professional Working / Native",
-    meta: "Communication for academic and local environments",
   },
 ];
 

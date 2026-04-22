@@ -22,7 +22,7 @@ function HeroSection() {
           <div className="max-w-[760px]">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/8 px-4 py-2 text-[0.68rem] font-bold uppercase tracking-[0.26em] text-amber-100 backdrop-blur-sm">
               <span className="h-2 w-2 rounded-full bg-cyan-300" />
-              {aboutContent.role}
+              Full-Stack Developer
             </div>
 
             <div className="mt-5">
@@ -38,21 +38,19 @@ function HeroSection() {
             <h1 className="mt-6 max-w-[760px] font-display text-[3rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-[4.4rem] lg:text-[5rem]">
               Wenura Kavinda
               <br />
-              builds{" "}
+              turns complex logic into{" "}
               <span className="bg-gradient-to-r from-amber-100 via-amber-300 to-orange-400 bg-clip-text text-transparent">
-                full-stack digital experiences
+                seamless digital products
               </span>
               .
             </h1>
 
             <div className="mt-5 flex min-h-[3rem] items-center text-base font-semibold text-cyan-200 sm:min-h-[3.4rem] sm:text-xl">
-              Responsive user-centric applications
+              MERN stack development / scalable web architecture / Kotlin mobile experience
             </div>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              Dedicated Software Engineering student at SLIIT with a strong focus
-              on full-stack web development, responsive application design, and
-              practical implementation across web and mobile environments.
+              I am a full-stack developer specializing in the MERN stack and high-performance web architecture, currently refining my craft as a Software Engineering undergraduate at SLIIT.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
@@ -64,9 +62,9 @@ function HeroSection() {
               </a>
               <a
                 className="inline-flex min-h-14 items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 font-semibold text-white transition hover:-translate-y-0.5 hover:border-amber-200/40 hover:text-amber-100"
-                href="#projects"
+                href="#contact"
               >
-                View Projects
+                Get in Touch
               </a>
             </div>
           </div>
@@ -77,9 +75,6 @@ function HeroSection() {
               <Suspense fallback={<div className="h-full min-h-[320px] w-full" />}>
                 <InteractiveHeroModel />
               </Suspense>
-              <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 rounded-full bg-black/20 px-4 py-2 text-[11px] uppercase tracking-[0.24em] text-slate-300 backdrop-blur-sm">
-                Floating robot assistant
-              </div>
             </div>
           </div>
         </div>
