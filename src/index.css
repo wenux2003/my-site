@@ -95,3 +95,8 @@
 .stack-carousel-mask:hover .stack-carousel-track {
   animation-play-state: paused;
 }
+
+.stack-carousel-chip:hover span:first-child {
+  border-color: rgba(125, 211, 252, 0.4);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.22);
+}

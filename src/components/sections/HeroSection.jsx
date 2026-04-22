@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { aboutContent } from "../../data/siteContent";
 import HeroScrollArrow from "../effects/HeroScrollArrow";
+import TextType from "../effects/TextType";
 
 const LiquidEther = lazy(() => import("../background/LiquidEther"));
 const ShapeGrid = lazy(() => import("../background/ShapeGrid"));
@@ -64,8 +65,8 @@ function HeroSection() {
             <ShapeGrid
               borderColor="rgba(148, 163, 184, 0.34)"
               direction="diagonal"
-              hoverFillColor="rgba(34, 211, 238, 0.18)"
-              hoverTrailAmount={5}
+              hoverFillColor="rgba(34, 211, 238, 0.28)"
+              hoverTrailAmount={0}
               shape="square"
               speed={0.5}
               squareSize={38}
@@ -86,14 +87,24 @@ function HeroSection() {
 
             <h1 className="max-w-[780px] font-display text-[3rem] font-semibold leading-[0.92] tracking-[-0.06em] text-white sm:text-[4.4rem] lg:text-[5rem]">
               Turning complex logic into{" "}
-              <span className="bg-gradient-to-r from-amber-100 via-amber-300 to-orange-400 bg-clip-text text-transparent">
-                seamless digital products
-              </span>
-              .
+              <TextType
+                as="span"
+                className="bg-gradient-to-r from-amber-100 via-amber-300 to-orange-400 bg-clip-text text-transparent"
+                initialDelay={350}
+                loop={false}
+                showCursor={false}
+                startOnVisible
+                startWithFullText
+                text="seamless digital products."
+                typingSpeed={58}
+                variableSpeed={{ min: 42, max: 82 }}
+              />
             </h1>
 
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
-              I am a full-stack developer specializing in the MERN stack and high-performance web architecture, currently refining my craft as a Software Engineering undergraduate at SLIIT.
+              I am a full-stack developer specializing in the MERN stack and high-performance web
+              architecture, currently refining my craft as a Software Engineering undergraduate at
+              SLIIT.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">

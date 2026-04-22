@@ -15,48 +15,43 @@ export const focusAreas = [
     tag: "Web",
     title: "Full-Stack Web Development",
     description:
-      "Building responsive and user-centric web applications with React, Node.js, Express, MongoDB, and practical frontend-backend architecture.",
+      "Architecting modern, full-stack web applications using the MERN stack. I focus on responsive design, state management, and seamless API integration.",
   },
   {
     tag: "Mobile",
     title: "Android App Development",
     description:
-      "Creating Kotlin-based mobile experiences with Android Studio, widgets, habit flows, reminders, and more structured user journeys.",
+      "Crafting native Android experiences with Kotlin, focusing on clean UI and efficient task management.",
   },
   {
-    tag: "Logic",
-    title: "Problem Solving and Clean Code",
+    tag: "Systems",
+    title: "Systems Design and Algorithms",
     description:
-      "Focused on efficient implementation, cleaner code structure, and solving logic-heavy development problems with clarity and discipline.",
+      "Designing scalable server-side logic and optimizing data structures for high-performance applications.",
   },
 ];
 
 export const techStackGroups = [
   {
-    title: "Programming",
+    title: "Core Languages",
     accent: "from-cyan-300/30 via-cyan-200/10 to-transparent",
     items: [
       { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
-      { name: "Java", icon: "https://cdn.simpleicons.org/openjdk/F89820" },
       { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
-      { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
-      { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C" },
+      { name: "Java", icon: "https://cdn.simpleicons.org/openjdk/F89820" },
       { name: "Kotlin", icon: "https://cdn.simpleicons.org/kotlin/7F52FF" },
-      { name: "SQL", icon: "https://cdn.simpleicons.org/sqlite/003B57" },
-      { name: "HTML5", icon: "https://cdn.simpleicons.org/html5/E34F26" },
-      { name: "CSS3", icon: "https://cdn.simpleicons.org/css/663399" },
     ],
   },
   {
-    title: "Web Frameworks",
+    title: "Frontend and Backend",
     accent: "from-amber-300/30 via-amber-200/10 to-transparent",
     items: [
       { name: "React.js", icon: "https://cdn.simpleicons.org/react/61DAFB" },
       { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/5FA04E" },
       { name: "Express.js", icon: "https://cdn.simpleicons.org/express/FFFFFF" },
-      { name: "MERN Stack", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
-      { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3" },
       { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+      { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3" },
+      { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
     ],
   },
   {
@@ -70,7 +65,6 @@ export const techStackGroups = [
       { name: "VS Code", icon: "https://cdn.simpleicons.org/visualstudiocode/007ACC" },
       { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
       { name: "XAMPP", icon: "https://cdn.simpleicons.org/xampp/FB7A24" },
-      { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
     ],
   },
 ];
