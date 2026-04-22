@@ -6,8 +6,8 @@ function ProjectsSection() {
     <section className="py-10" id="projects">
       <SectionHeading
         eyebrow="Projects"
-        title="Project work aligned to the CV"
-        description="Expanded project cards based on the systems, applications, and implementations listed in your CV."
+        title="Practical systems I have built"
+        description="A focused look at full-stack platforms, student tools, and application workflows I have taken from idea to implementation."
       />
 
       <div className="mt-8 grid gap-5 lg:grid-cols-2">

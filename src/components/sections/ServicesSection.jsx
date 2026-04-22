@@ -7,7 +7,7 @@ function ServicesSection() {
       <SectionHeading
         eyebrow="Focus Areas"
         title="Core areas I work in"
-        description="These focus areas come directly from the profile and project direction in your CV."
+        description="The areas where I build most often, from production-minded web apps to practical mobile experiences."
       />
 
       <div className="mt-8 grid gap-5 lg:grid-cols-3">

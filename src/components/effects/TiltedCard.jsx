@@ -90,7 +90,7 @@ export default function TiltedCard({
       )}
 
       <motion.div
-        className="relative [transform-style:preserve-3d]"
+        className="relative h-full w-full [transform-style:preserve-3d]"
         style={{
           width: imageWidth,
           height: imageHeight,

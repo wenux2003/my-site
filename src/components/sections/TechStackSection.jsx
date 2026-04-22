@@ -34,7 +34,7 @@ function TechStackSection() {
       <SectionHeading
         eyebrow="Tech Stack"
         title="Three stack categories shown as animated web carousels"
-        description="Inspired by modern component showcase sections, this layout presents your stack in three moving rows based on the exact categories from the CV."
+        description="A quick scan of the languages, frameworks, and tools I use across web, mobile, and backend work."
       />
 
       <div className="mt-8 space-y-10">
