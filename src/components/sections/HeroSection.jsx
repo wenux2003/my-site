@@ -3,6 +3,7 @@ import { aboutContent } from "../../data/siteContent";
 import HeroScrollArrow from "../effects/HeroScrollArrow";
 
 const LiquidEther = lazy(() => import("../background/LiquidEther"));
+const ShapeGrid = lazy(() => import("../background/ShapeGrid"));
 const InteractiveHeroModel = lazy(() => import("../three/InteractiveHeroModel"));
 
 const socialLinks = [
@@ -58,10 +59,23 @@ function HeroSection() {
       id="home"
     >
       <div className="relative min-h-screen overflow-hidden">
-        <Suspense fallback={<div className="pointer-events-none absolute inset-0 opacity-50" />}>
-          <LiquidEther className="pointer-events-none absolute inset-0 opacity-70" />
+        <Suspense fallback={<div className="absolute inset-0 bg-ink" />}>
+          <div className="absolute inset-0 opacity-80">
+            <ShapeGrid
+              borderColor="rgba(148, 163, 184, 0.34)"
+              direction="diagonal"
+              hoverFillColor="rgba(34, 211, 238, 0.18)"
+              hoverTrailAmount={5}
+              shape="square"
+              speed={0.5}
+              squareSize={38}
+            />
+          </div>
         </Suspense>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(124,58,237,0.12),transparent_24%),linear-gradient(110deg,rgba(8,17,29,0.42),rgba(8,17,29,0.82)_52%,rgba(8,17,29,0.96))]" />
+        <Suspense fallback={<div className="pointer-events-none absolute inset-0 opacity-50" />}>
+          <LiquidEther className="pointer-events-none absolute inset-0 opacity-25" />
+        </Suspense>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(124,58,237,0.1),transparent_24%),linear-gradient(110deg,rgba(8,17,29,0.28),rgba(8,17,29,0.68)_52%,rgba(8,17,29,0.9))]" />
 
         <div className="relative mx-auto grid min-h-screen max-w-[1440px] gap-8 px-5 pb-24 pt-28 sm:px-8 sm:pb-28 sm:pt-32 lg:grid-cols-[minmax(0,800px)_minmax(320px,0.82fr)] lg:items-center lg:gap-24 lg:px-12 lg:pt-34 xl:gap-32 xl:px-16">
           <div className="max-w-[760px]">
