@@ -1,5 +1,6 @@
 import AboutSection from "./components/sections/AboutSection";
 import ContactSection from "./components/sections/ContactSection";
+import FooterSection from "./components/sections/FooterSection";
 import Header from "./components/layout/Header";
 import HeroSection from "./components/sections/HeroSection";
 import ProcessSection from "./components/sections/ProcessSection";
@@ -13,7 +14,7 @@ function App() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(241,132,74,0.24),transparent_28%),radial-gradient(circle_at_82%_12%,rgba(240,199,118,0.12),transparent_24%),linear-gradient(135deg,#08111d_0%,#0f1d2c_55%,#13293b_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-80 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),transparent)]" />
 
-      <div className="relative mx-auto flex min-h-screen w-full max-w-[1440px] flex-col px-4 pb-16 sm:px-6 lg:px-8 xl:px-10">
+      <div className="relative mx-auto flex min-h-screen w-full max-w-[1440px] flex-col px-4 sm:px-6 lg:px-8 xl:px-10">
         <Header />
         <main className="flex-1">
           <HeroSection />
@@ -23,6 +24,7 @@ function App() {
           <ProjectsSection />
           <ProcessSection />
           <ContactSection />
+          <FooterSection />
         </main>
       </div>
     </div>
