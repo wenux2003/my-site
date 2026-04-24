@@ -100,3 +100,38 @@
   border-color: rgba(125, 211, 252, 0.4);
   box-shadow: 0 0 24px rgba(34, 211, 238, 0.22);
 }
+
+@keyframes hero-model-bubble-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-1deg);
+  }
+
+  34% {
+    transform: translate3d(8px, -12px, 0) rotate(2deg);
+  }
+
+  68% {
+    transform: translate3d(-7px, 8px, 0) rotate(-2deg);
+  }
+}
+
+.hero-model-bubble {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid rgba(125, 211, 252, 0.2);
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.36));
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  color: rgba(226, 232, 240, 0.92);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 0.45rem 0.8rem 0.45rem 0.48rem;
+  backdrop-filter: blur(16px);
+  animation: hero-model-bubble-float var(--bubble-duration, 7s) ease-in-out infinite;
+  animation-delay: var(--bubble-delay, 0s);
+  will-change: transform;
+}

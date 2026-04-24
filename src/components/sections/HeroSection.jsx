@@ -7,6 +7,110 @@ const LiquidEther = lazy(() => import("../background/LiquidEther"));
 const ShapeGrid = lazy(() => import("../background/ShapeGrid"));
 const InteractiveHeroModel = lazy(() => import("../three/InteractiveHeroModel"));
 
+const heroBubbles = [
+  {
+    label: "React",
+    className: "left-[3%] top-[8%]",
+    delay: "0s",
+    duration: "7s",
+    icon: (
+      <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none">
+        <ellipse cx="12" cy="12" rx="9" ry="3.6" stroke="currentColor" strokeWidth="1.7" />
+        <ellipse
+          cx="12"
+          cy="12"
+          rx="9"
+          ry="3.6"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          transform="rotate(60 12 12)"
+        />
+        <ellipse
+          cx="12"
+          cy="12"
+          rx="9"
+          ry="3.6"
+          stroke="currentColor"
+          strokeWidth="1.7"
+          transform="rotate(120 12 12)"
+        />
+        <circle cx="12" cy="12" r="1.4" fill="currentColor" />
+      </svg>
+    ),
+  },
+  {
+    label: "Node",
+    className: "right-[1%] top-[14%]",
+    delay: "-1.7s",
+    duration: "8s",
+    icon: (
+      <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none">
+        <path
+          d="m12 3 7.5 4.3v8.4L12 20l-7.5-4.3V7.3L12 3Z"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+        />
+        <path d="M8.25 13.35c.75 1 2.02 1.55 3.75 1.55 1.9 0 3.25-.76 3.25-2.13 0-1.18-.86-1.76-2.55-2l-1.4-.2c-1.42-.2-2.13-.64-2.13-1.49 0-1 .98-1.64 2.54-1.64 1.42 0 2.5.45 3.18 1.24" stroke="currentColor" strokeLinecap="round" strokeWidth="1.55" />
+      </svg>
+    ),
+  },
+  {
+    label: "APIs",
+    className: "left-[-3%] top-[48%]",
+    delay: "-3.4s",
+    duration: "7.6s",
+    icon: (
+      <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none">
+        <path d="M8.25 8.75 5 12l3.25 3.25" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
+        <path d="M15.75 8.75 19 12l-3.25 3.25" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
+        <path d="m13.25 6.75-2.5 10.5" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+      </svg>
+    ),
+  },
+  {
+    label: "MongoDB",
+    className: "right-[-4%] top-[51%]",
+    delay: "-0.9s",
+    duration: "8.4s",
+    icon: (
+      <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none">
+        <path
+          d="M12 3.25c3.15 2.9 4.7 5.55 4.7 8.35 0 3.05-1.78 5.25-4.7 7.15-2.92-1.9-4.7-4.1-4.7-7.15 0-2.8 1.55-5.45 4.7-8.35Z"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="1.8"
+        />
+        <path d="M12 8.5v11.25" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+      </svg>
+    ),
+  },
+  {
+    label: "UI",
+    className: "left-[18%] bottom-[2%]",
+    delay: "-2.5s",
+    duration: "7.2s",
+    icon: (
+      <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none">
+        <path d="M5 6.5h14v11H5v-11Z" stroke="currentColor" strokeLinejoin="round" strokeWidth="1.8" />
+        <path d="M8 10h3.5M8 13.5h8" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+      </svg>
+    ),
+  },
+  {
+    label: "AI",
+    className: "right-[17%] bottom-[0%]",
+    delay: "-4.1s",
+    duration: "8.8s",
+    icon: (
+      <svg aria-hidden="true" className="h-4 w-4" viewBox="0 0 24 24" fill="none">
+        <path d="M12 3.75v3M12 17.25v3M3.75 12h3M17.25 12h3M6.15 6.15l2.1 2.1M15.75 15.75l2.1 2.1M17.85 6.15l-2.1 2.1M8.25 15.75l-2.1 2.1" stroke="currentColor" strokeLinecap="round" strokeWidth="1.8" />
+        <circle cx="12" cy="12" r="3.25" stroke="currentColor" strokeWidth="1.8" />
+      </svg>
+    ),
+  },
+];
+
 const socialLinks = [
   {
     label: "GitHub",
@@ -141,6 +245,23 @@ function HeroSection() {
 
           <div className="relative flex min-h-[300px] items-center justify-center lg:min-h-[380px] lg:justify-end">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(168,85,247,0.22),transparent_36%)] blur-3xl" />
+            <div className="pointer-events-none absolute inset-x-0 top-1/2 z-10 hidden h-[390px] -translate-y-1/2 md:block lg:h-[450px]">
+              {heroBubbles.map((bubble) => (
+                <div
+                  className={`hero-model-bubble absolute ${bubble.className}`}
+                  key={bubble.label}
+                  style={{
+                    "--bubble-delay": bubble.delay,
+                    "--bubble-duration": bubble.duration,
+                  }}
+                >
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-cyan-200/12 text-cyan-100">
+                    {bubble.icon}
+                  </span>
+                  <span>{bubble.label}</span>
+                </div>
+              ))}
+            </div>
             <div className="relative h-full min-h-[300px] w-full max-w-[390px]">
               <Suspense fallback={<div className="h-full min-h-[300px] w-full" />}>
                 <InteractiveHeroModel />
