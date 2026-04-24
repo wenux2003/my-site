@@ -1,4 +1,4 @@
-# Web-Max Portfolio
+# wenux.lk
 
 A React + Vite portfolio frontend with a polished one-page layout.
 
